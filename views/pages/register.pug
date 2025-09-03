@@ -1,0 +1,23 @@
+extends ../layouts/main
+
+block content
+  .row.justify-content-center
+    .col-md-6
+      h2.mb-4 Registro de Novo Usuário
+      #alert-container
+      form#register-form
+        .mb-3
+          label.form-label(for="name") Nome Completo
+          input.form-control(type="text" id="name" name="name" required)
+        .mb-3
+          label.form-label(for="email") Email
+          input.form-control(type="email" id="email" name="email" required)
+        .mb-3
+          label.form-label(for="password") Senha
+          input.form-control(type="password" id="password" name="password" required)
+        button.btn.btn-primary(type="submit") Registrar
+      .mt-3
+        p Já tem uma conta? <a href="/login">Faça o login aqui</a>.
+
+block scripts
+  script(src="/js/auth.js")

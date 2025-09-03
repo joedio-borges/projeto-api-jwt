@@ -1,0 +1,11 @@
+extends ../layouts/main
+
+block content
+  .p-5.mb-4.bg-light.rounded-3
+    .container-fluid.py-5
+      h1.display-5.fw-bold Bem-vindo ao Sistema!
+      p.col-md-8.fs-4.
+        Este é um sistema de exemplo para gerenciamento de produtos, construído com Node.js, Express, Sequelize e PUG.
+        Faça o login para começar a gerenciar seus produtos.
+      a.btn.btn-primary.btn-lg(href="/login") Fazer Login
+      a.btn.btn-secondary.btn-lg.ms-2(href="/register") Registrar-se

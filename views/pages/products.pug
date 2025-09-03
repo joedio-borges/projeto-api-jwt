@@ -1,0 +1,43 @@
+extends ../layouts/main
+
+block content
+  .d-flex.justify-content-between.align-items-center.mb-4
+    h1 Meus Produtos
+    button.btn.btn-primary(data-bs-toggle="modal" data-bs-target="#productModal") Adicionar Produto
+
+  #alert-container
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th Nome
+        th Descrição
+        th Preço
+        th Ações
+    tbody#products-table-body
+      //- Linhas da tabela serão inseridas aqui via JavaScript
+
+  //- Modal para Adicionar/Editar Produto
+  #productModal.modal.fade
+    .modal-dialog
+      .modal-content
+        form#product-form
+          .modal-header
+            h5.modal-title#modalTitle Novo Produto
+            button.btn-close(type="button" data-bs-dismiss="modal")
+          .modal-body
+            input(type="hidden" id="productId")
+            .mb-3
+              label.form-label(for="name") Nome do Produto
+              input.form-control(type="text" id="name" required)
+            .mb-3
+              label.form-label(for="description") Descrição
+              textarea.form-control(id="description" rows="3")
+            .mb-3
+              label.form-label(for="price") Preço
+              input.form-control(type="number" id="price" step="0.01" required)
+          .modal-footer
+            button.btn.btn-secondary(type="button" data-bs-dismiss="modal") Fechar
+            button.btn.btn-primary(type="submit") Salvar
+
+block scripts
+  script(src="/js/products.js")
